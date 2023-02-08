@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Chewy&family=Fredoka+One&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" href="Image/foto-mia.ico">
+    <title>Tomas Kimmel</title>
+</head>
+<body>
+    
+    <nav class="navegador">
+        <div class="cont-nav">
+            <div class="logo-nav">
+                <a href="index.html">{ tomi }</a>
+            </div>
+            <input type="checkbox" id="check">
+            <label for="check" class="cont-toggle-btn">
+                <i class="fa-solid fa-bars" id="toggle-btn"></i>
+            </label>
+            <ul class="botones-nav">
+                <li class="link-botones"><a href="#link-quien-soy">Sobre Mi</a></li>
+                <li class="link-botones"><a href="#link-proyectos">Proyectos</a></li>
+                <li class="link-botones"><a href="#link-contacto">Contactame</a></li>
+            <ul>
+        </div>
+    </nav>
+
+    <article class="presentacion">
+        <div class="textos-pres">
+            <h4>Hola 👋, soy</h4>
+            <h1>TOMAS <br> KIMMEL</h1>
+            <p>Front-Developer, apasionado por la programacion</p>
+        </div>
+        <div class="botones-presentacion">
+            <div class="cv" id="boton-pres">
+                <a href="">
+                    Descargar CV
+                    <i class="fa-solid fa-download"></i>
+                </a>
+            </div>
+            <div class="contacto" id="boton-pres">
+                <a href="#link-contacto">
+                    Contactame
+                    <i class="fa-solid fa-paper-plane"></i>
+                </a>
+            </div>
+        </div>
+    </article>
+
+    <article class="quien-soy" id="link-quien-soy">
+        <h5 id="texto-h5">Quien Soy</h5>
+        <h2 id="texto-h2">Sobre Mi</h2>
+        <div class="linea-horizo"></div>
+        <div class="todo-quien-soy">
+            <div class="imagen-quien-soy">
+                <img src="Image/foto-mia.png" alt="">
+            </div>
+            <div class="texto-quien-soy">
+                <p>Me encanta crear sitios web que brinden una experiencia de usuario única y satisfactoria. Puedes ver algunos de mis proyectos en la sección de <a href="#link-proyectos">proyectos</a>. Soy una persona autodidacta, responsable y comprometida con mi trabajo. Constantemente estoy aprendiendo nuevas tecnologías y herramientas para mejorar mis habilidades. De bajo, puede ver mis habilidades y tecnologías que uso. No dude en <a href="#link-contacto">contactarse</a>  conmigo si tiene alguna pregunta.</p>
+            </div>
+        </div>
+    </article>
+
+    <article class="skills">
+        <h5 id="texto-h5">Alguna de mis habilidades</h5>
+        <h3 id="texto-h2">Mis Habilidades</h3>
+        <div class="linea-horizo"></div>
+    </article>
+    <div class="barra-skills">
+        <li><h3>HTML</h3>
+            <span class="bar"><span class="html"></span></span>
+        </li>
+        <li><h3>CSS</h3>
+            <span class="bar"><span class="css"></span></span>
+        </li>
+        <li><h3>PYTHON</h3>
+            <span class="bar"><span class="py"></span></span>
+        </li>
+        <li><h3>JAVASCRIPT</h3>
+            <span class="bar"><span class="js"></span></span>
+        </li>
+    </div>
+
+    <article class="proyectos" id="link-proyectos">
+        <h5 id="texto-h5">Algunos de mis proyectos</h5>
+        <h2 id="texto-h2">Mis Proyectos</h2>
+        <div class="linea-horizo"></div>
+        <div class="todos-proyectos">
+            <div class="cca">
+                <div class="imagen-proyecto-cca">
+                    <img src="Project/cca.jpg">
+                </div>
+                <div class="texto-proyecto-cca">
+                    <h3>Circulo Cordobes Aeromodelismo</h3>
+                    <div class="linea-horizo-proyectos"></div>
+                    <p>Esta es una pagina creada para el Circulo Cordobes de Aeromodelismo, en la cual podemos visitar las actividades que alli se realizan y diversos archivos que muestran como comenzar a realizar dichas actividades</p>
+                    <div class="iconos">
+                        <a href=""><i class="fa-brands fa-github"></i></a>
+                        <a href=""><i class="fa-solid fa-up-right-from-square"></i></a>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </article>
+    
+    <article class="contacto" id="link-contacto">
+        <div class="todo-contacto">
+            <div class="texto-contacto">
+                <h2>Ahora o nunca</h2>
+                <div class="contactame-contacto">
+                    <h3>Contactame</h3>
+                </div>
+                <p>Si quieres contactarme conmigo, puedes hacerlo a través de las redes sociales o llenando el formulario de contacto. Te responderé lo antes posible. ¡Gracias! 😊</p>
+                <address>
+                    <i class="fa-regular fa-envelope"></i>
+                    totokimmel@gmail.com
+                </address>
+            </div>
+            <div class="formulario-contacto">
+                <form action="">
+                    <input type="text" placeholder="Nombre">
+                    <input type="text" placeholder="Asunto">
+                    <input type="email" placeholder="Email">
+                    <input type="text" placeholder="Mensaje" id="input-msg">
+                    <button>
+                        <h3>Enviar</h3>
+                        <i class="fa-solid fa-paper-plane"></i>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </article>
+    
+    <footer>
+        <h1>Gracias por visitar mi sitio web!😊</h1>
+        <div class="link-footer">
+            <a href="#link-contacto">Contactame</a>
+        </div>
+        <h3>O tambien puedes contactarme a travez de:</h3>
+        <div class="iconos">
+            <i class="fa-brands fa-github"></i>        
+            <i class="fa-regular fa-envelope"></i>
+        </div>
+        <h4>Hecho por Tomas Kimmel</h4>
+    </footer>
+
+    <script type="text/javascript">
+		window.addEventListener("scroll", function(){
+			var nav = document.querySelector("ul");
+            nav.classList.toggle("abajo",window.scrollY>0);
+		})
+	</script>
+
+</body>
+</html>
