@@ -1,0 +1,107 @@
+.stack {
+  background: var(--metal-950);
+  overflow: hidden;
+}
+
+/* Las dos capas del tablero se apilan en la misma celda: base tenue + capa iluminada */
+.stack-stage {
+  --mx: -999px;
+  --my: -999px;
+  position: relative;
+  display: grid;
+}
+
+.stack-board {
+  grid-area: 1 / 1;
+}
+
+/* Charco de luz cálida bajo el puntero */
+.stack-stage::before {
+  content: '';
+  position: absolute;
+  inset: -80px;
+  pointer-events: none;
+  background: radial-gradient(260px circle at calc(var(--mx) + 80px) calc(var(--my) + 80px), rgba(255, 190, 115, 0.12), transparent 70%);
+}
+
+.stack-row {
+  display: grid;
+  grid-template-columns: minmax(0, 13rem) minmax(0, 1fr);
+  gap: 0.75rem 2.5rem;
+  align-items: baseline;
+  padding-block: clamp(1.25rem, 2.6vw, 2rem);
+  border-bottom: 1px solid var(--line);
+}
+
+.stack-row-title {
+  font-family: var(--font-body);
+  font-size: 0.92rem;
+  font-weight: 600;
+  text-transform: none;
+  color: var(--text-dim);
+}
+
+.stack-row-items {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.1rem 1.6rem;
+}
+
+.stack-row-items li {
+  font-family: var(--font-display);
+  font-size: clamp(1.9rem, 4.2vw, 3.4rem);
+  font-weight: 700;
+  line-height: 1.05;
+  text-transform: uppercase;
+  color: #8c7c69;
+}
+
+.stack-row-items li.is-main {
+  color: var(--brass);
+}
+
+/* Capa iluminada: solo se ve dentro del círculo del puntero */
+.stack-board.is-lit {
+  pointer-events: none;
+  -webkit-mask-image: radial-gradient(220px circle at var(--mx) var(--my), #000 30%, transparent 75%);
+  mask-image: radial-gradient(220px circle at var(--mx) var(--my), #000 30%, transparent 75%);
+}
+
+.stack-board.is-lit .stack-row {
+  border-color: transparent;
+}
+
+.stack-board.is-lit .stack-row-title {
+  color: var(--text-main);
+}
+
+.stack-board.is-lit li {
+  color: var(--text-main);
+  text-shadow: 0 0 24px rgba(255, 196, 120, 0.35);
+}
+
+.stack-board.is-lit li.is-main {
+  color: #ffd29a;
+}
+
+/* Sin puntero fino (touch) no hay linterna: todo legible a pleno */
+@media (hover: none) {
+  .stack-board.is-lit,
+  .stack-stage::before {
+    display: none;
+  }
+
+  .stack-row-items li {
+    color: var(--text-main);
+  }
+
+  .stack-row-items li.is-main {
+    color: var(--brass);
+  }
+}
+
+@media (max-width: 720px) {
+  .stack-row {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}

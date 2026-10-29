@@ -1,0 +1,116 @@
+/* Cierre: de vuelta a la pared bajo la lámpara */
+.contact {
+  background: var(--espresso);
+  overflow: hidden;
+  isolation: isolate;
+  padding-bottom: 0;
+}
+
+.contact-glow {
+  position: absolute;
+  inset: -20% -10% auto;
+  height: 90%;
+  z-index: -1;
+  background: radial-gradient(45% 55% at 50% 30%, rgba(255, 190, 115, 0.2), rgba(227, 164, 87, 0.05) 45%, transparent 72%);
+  pointer-events: none;
+}
+
+.contact-header {
+  max-width: 900px;
+}
+
+.contact-title {
+  font-size: clamp(3rem, 8vw, 6rem);
+  font-weight: 800;
+  line-height: 0.9;
+  text-transform: uppercase;
+}
+
+.contact-title .accent {
+  color: var(--brass);
+}
+
+.contact-sub {
+  margin-top: 1.25rem;
+  max-width: 52ch;
+  font-size: 1.1rem;
+  color: var(--text-muted);
+}
+
+.contact-list {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  column-gap: clamp(1.5rem, 4vw, 3.5rem);
+  margin-top: clamp(2.5rem, 6vw, 4.5rem);
+  border-top: 1px solid var(--line);
+}
+
+.contact-row {
+  position: relative;
+  display: grid;
+  grid-template-columns: auto minmax(0, 11.5rem) minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 1rem;
+  min-height: 64px;
+  padding-block: 1.1rem;
+  border-bottom: 1px solid var(--line);
+  transition: color 0.2s ease;
+}
+
+.contact-icon {
+  color: var(--brass);
+}
+
+.contact-label {
+  font-size: 0.88rem;
+  color: var(--text-dim);
+}
+
+.contact-val {
+  font-weight: 600;
+  color: var(--text-main);
+  overflow-wrap: anywhere;
+  transition: color 0.2s ease;
+}
+
+.contact-trail {
+  color: var(--text-dim);
+}
+
+.contact-row:hover .contact-val {
+  color: var(--brass);
+}
+
+.copied-toast {
+  position: absolute;
+  right: 0;
+  bottom: -0.2rem;
+  font-size: 0.78rem;
+  color: var(--ok);
+}
+
+@media (max-width: 760px) {
+  .contact-list {
+    grid-template-columns: 1fr;
+  }
+
+  .contact-row {
+    grid-template-columns: auto minmax(0, 1fr) auto;
+    row-gap: 0.1rem;
+  }
+
+  .contact-label {
+    grid-column: 2;
+  }
+
+  .contact-val {
+    grid-column: 2;
+    grid-row: 2;
+  }
+
+  .contact-trail,
+  .contact-row .text-ok {
+    grid-column: 3;
+    grid-row: 1 / span 2;
+  }
+}

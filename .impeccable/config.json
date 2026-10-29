@@ -1,0 +1,17 @@
+{
+  "detector": {
+    "ignoreRules": [],
+    "ignoreFiles": [],
+    "ignoreValues": [
+      {
+        "rule": "gradient-text",
+        "value": "*",
+        "files": [
+          "src/components/Hero.css"
+        ],
+        "createdAt": "2026-10-29T01:58:50.059Z",
+        "reason": "model triage: L56 is the lamp-shade span (no text), a shaded metal shape, not text"
+      }
+    ]
+  }
+}

@@ -1,0 +1,303 @@
+.hero {
+  position: relative;
+  background: #0d0b09;
+  isolation: isolate;
+}
+
+.hero-view {
+  position: relative;
+  height: max(100svh, 620px);
+  overflow: hidden;
+}
+
+.hero-canvas {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+/* Viñeta: integra la escena con la página y da contraste al header */
+.hero-view::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background:
+    linear-gradient(180deg, rgba(13, 11, 9, 0.75), transparent 18%),
+    linear-gradient(0deg, var(--metal-900), transparent 14%);
+}
+
+/* Pantallas: tamaño base fijo, la escena las proyecta con matrix3d sobre cada panel */
+.screen-ui {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  transform-origin: 0 0;
+  overflow: hidden;
+  opacity: 0;
+  transition: opacity 0.8s var(--ease-out);
+  backface-visibility: hidden;
+}
+
+.is-ready .screen-ui {
+  opacity: 1;
+}
+
+.screen-left,
+.screen-right {
+  width: 360px;
+  height: 640px;
+}
+
+.screen-center {
+  width: 760px;
+  height: 428px;
+  display: flex;
+}
+
+.screen-left {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 34px 30px;
+  background:
+    radial-gradient(90% 60% at 100% 0%, rgba(227, 164, 87, 0.1), transparent 60%),
+    #100e0c;
+}
+
+.hero-title {
+  font-weight: 800;
+  font-size: 50px;
+  line-height: 0.88;
+  text-transform: uppercase;
+  color: var(--text-main);
+}
+
+.hero-title span {
+  display: block;
+  color: var(--brass);
+}
+
+.hero-sub {
+  margin-top: 18px;
+  font-size: 15.5px;
+  line-height: 1.55;
+  color: var(--text-muted);
+}
+
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 24px;
+}
+
+.hero-actions .btn {
+  font-size: 14px;
+  padding: 11px 16px;
+}
+
+.hero-meta {
+  margin-top: 26px;
+  padding-top: 16px;
+  border-top: 1px solid var(--line);
+  font-size: 13px;
+  color: var(--text-dim);
+}
+
+.hero-meta strong {
+  color: var(--text-main);
+  font-weight: 600;
+}
+
+/* Monitor derecho: explorador de proyectos */
+.screen-right {
+  padding: 30px 24px;
+  background: #0f0d0b;
+}
+
+.files-path {
+  font-size: 13px;
+  color: var(--text-dim);
+  padding-bottom: 14px;
+  border-bottom: 1px solid var(--line);
+}
+
+.files ul {
+  display: grid;
+  gap: 6px;
+  margin-top: 14px;
+}
+
+.files-item {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 2px 12px;
+  width: 100%;
+  padding: 14px 12px;
+  text-align: left;
+  background: transparent;
+  border: 1px solid transparent;
+  border-radius: 3px;
+  color: var(--text-main);
+  font: inherit;
+  cursor: pointer;
+  transition: background 0.2s ease, border-color 0.2s ease;
+}
+
+.files-item svg {
+  grid-row: span 2;
+  color: var(--brass);
+  margin-top: 2px;
+}
+
+.files-item:hover {
+  background: var(--brass-soft);
+  border-color: var(--brass-line);
+}
+
+.files-name {
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.files-desc {
+  font-size: 13px;
+  color: var(--text-dim);
+}
+
+/* Vapor del café: anclado a la taza proyectada */
+.steam {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  width: 46px;
+  height: 70px;
+  overflow: visible;
+  pointer-events: none;
+}
+
+.steam path {
+  stroke: rgba(239, 229, 214, 0.6);
+  stroke-width: 3.5;
+  stroke-linecap: round;
+  filter: blur(1.8px);
+  opacity: 0;
+  animation: steam 6s ease-out infinite;
+}
+
+.steam path:nth-child(2) {
+  animation-delay: 2s;
+}
+
+.steam path:nth-child(3) {
+  animation-delay: 4s;
+}
+
+@keyframes steam {
+  0% { opacity: 0; transform: translateY(12px) scaleX(0.8); }
+  25% { opacity: 0.75; }
+  100% { opacity: 0; transform: translateY(-36px) scaleX(1.3); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .steam path {
+    animation: none;
+    opacity: 0.35;
+  }
+}
+
+.is-flat .steam,
+.is-loading .steam {
+  display: none;
+}
+
+/* Mobile: botonera para viajar entre monitores */
+.screen-tabs {
+  position: absolute;
+  left: 50%;
+  bottom: max(20px, env(safe-area-inset-bottom));
+  z-index: 3;
+  display: flex;
+  gap: 4px;
+  padding: 4px;
+  transform: translateX(-50%);
+  background: rgba(14, 13, 12, 0.82);
+  backdrop-filter: blur(8px);
+  border: 1px solid var(--line-strong);
+  border-radius: 999px;
+}
+
+.screen-tabs button {
+  min-height: 40px;
+  padding: 0 14px;
+  border: none;
+  border-radius: 999px;
+  background: transparent;
+  color: var(--text-muted);
+  font: 600 0.82rem var(--font-body);
+  white-space: nowrap;
+  cursor: pointer;
+  transition: background 0.25s var(--ease-out), color 0.25s ease;
+}
+
+.screen-tabs button.is-active {
+  background: var(--brass);
+  color: var(--metal-950);
+}
+
+/* En mobile la pantalla horizontal tiene una base más chica: el código se lee más grande */
+@media (max-width: 899px) {
+  .screen-center {
+    width: 440px;
+    height: 248px;
+  }
+
+  .screen-center .terminal-bar .tname {
+    padding: 6px 10px;
+    font-size: 11px;
+  }
+
+  .screen-center .terminal-body {
+    padding: 10px 12px;
+    font-size: 12.5px;
+    line-height: 1.55;
+    overflow: hidden;
+  }
+
+  .screen-center .tline {
+    white-space: pre;
+  }
+}
+
+/* Sin WebGL: las pantallas pasan a flujo normal */
+.is-flat .hero-view {
+  height: auto;
+  display: grid;
+  gap: 24px;
+  padding: calc(var(--header-height) + 32px) clamp(16px, 5vw, 48px) 48px;
+  max-width: var(--container);
+  margin: 0 auto;
+}
+
+.is-flat .hero-view::after {
+  display: none;
+}
+
+.is-flat .screen-ui {
+  position: static;
+  opacity: 1;
+  transform: none !important;
+  width: auto;
+  height: auto;
+  border: 10px solid var(--metal-950);
+  border-radius: 6px;
+}
+
+.is-flat .screen-right {
+  display: none;
+}
