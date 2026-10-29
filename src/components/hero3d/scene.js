@@ -308,7 +308,11 @@ export function createDeskScene(stage, { getOverlays, steam, onReady, reducedMot
   renderer.shadowMap.enabled = true;
   renderer.shadowMap.type = THREE.PCFSoftShadowMap;
   renderer.domElement.className = 'hero-canvas';
-  renderer.domElement.setAttribute('aria-hidden', 'true');
+  renderer.domElement.setAttribute('role', 'img');
+  renderer.domElement.setAttribute(
+    'aria-label',
+    'Escritorio de roble claro frente a una pared blanca, iluminado por una lámpara colgante. Tres monitores en un brazo hidráulico, teclado y mouse blancos sobre un mousepad negro y una taza de café humeante.',
+  );
   stage.prepend(renderer.domElement);
 
   RectAreaLightUniformsLib.init();

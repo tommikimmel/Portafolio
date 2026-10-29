@@ -1,75 +1,135 @@
 <!doctype html>
-<html lang="es">
+<html lang="es-AR">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    
-    <!-- Primary Meta Tags -->
-    <title>Tomas Kimmel | Desarrollador Full Stack & Software Engineer</title>
-    <meta name="title" content="Tomas Kimmel | Desarrollador Full Stack & Software Engineer" />
-    <meta name="description" content="Portafolio profesional de Tomas Kimmel, Desarrollador Full Stack especializado en Spring Boot, React 19, PostgreSQL, Docker y WebSockets. Estudiante de la UTN." />
-    <meta name="keywords" content="Tomas Kimmel, Full Stack Developer, Desarrollador Full Stack, Spring Boot, React 19, PostgreSQL, Docker, Java, UTN, Córdoba Argentina, SaaS" />
+
+    <!-- SEO principal -->
+    <title>Tomas Kimmel | Desarrollador Full Stack · Java, Spring Boot y Angular</title>
+    <meta name="description" content="Portafolio de Tomas Kimmel, desarrollador Full Stack en Córdoba, Argentina. Construyo SaaS en producción y microservicios con Java, Spring Boot, Angular, PostgreSQL, Docker y Kafka. Estudiante de la UTN FRC." />
     <meta name="author" content="Tomas Kimmel" />
-    <meta name="robots" content="index, follow" />
-    <link rel="canonical" href="https://github.com/tommikimmel/portafolio" />
+    <meta name="robots" content="index, follow, max-image-preview:large" />
+    <link rel="canonical" href="https://tomaskimmel.com.ar/" />
+    <meta name="theme-color" content="#141210" />
+    <meta name="color-scheme" content="dark" />
+    <!-- Con JavaScript, el contenido estático no parpadea antes de que monte React -->
+    <script>document.documentElement.classList.add('js')</script>
+    <style>.js .seo-fallback { display: none; } body { background: #141210; }</style>
 
-    <!-- Open Graph / Facebook -->
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://github.com/tommikimmel/portafolio" />
-    <meta property="og:title" content="Tomas Kimmel | Desarrollador Full Stack" />
-    <meta property="og:description" content="Desarrollador Full Stack especializado en construir productos SaaS reales con Spring Boot, React 19 y PostgreSQL." />
+    <!-- Íconos -->
+    <link rel="icon" href="/favicon.ico" sizes="32x32" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+
+    <!-- Open Graph (LinkedIn, WhatsApp, Facebook) -->
+    <meta property="og:type" content="profile" />
+    <meta property="og:url" content="https://tomaskimmel.com.ar/" />
+    <meta property="og:site_name" content="Tomas Kimmel" />
     <meta property="og:locale" content="es_AR" />
-    <meta property="og:site_name" content="Tomas Kimmel Portfolio" />
+    <meta property="og:title" content="Tomas Kimmel | Desarrollador Full Stack" />
+    <meta property="og:description" content="SaaS en producción y microservicios con Java, Spring Boot, Angular, PostgreSQL y Docker. Córdoba, Argentina." />
+    <meta property="og:image" content="https://tomaskimmel.com.ar/og-image.jpg" />
+    <meta property="og:image:type" content="image/jpeg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Escritorio de Tomas Kimmel en 3D: tres monitores con su presentación como Desarrollador Full Stack, su perfil en código y sus proyectos." />
+    <meta property="profile:first_name" content="Tomas" />
+    <meta property="profile:last_name" content="Kimmel" />
 
-    <!-- Twitter -->
-    <meta property="twitter:card" content="summary_large_image" />
-    <meta property="twitter:url" content="https://github.com/tommikimmel/portafolio" />
-    <meta property="twitter:title" content="Tomas Kimmel | Desarrollador Full Stack" />
-    <meta property="twitter:description" content="Desarrollador Full Stack especializado en construir productos SaaS reales con Spring Boot, React 19 y PostgreSQL." />
+    <!-- X / Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Tomas Kimmel | Desarrollador Full Stack" />
+    <meta name="twitter:description" content="SaaS en producción y microservicios con Java, Spring Boot, Angular, PostgreSQL y Docker. Córdoba, Argentina." />
+    <meta name="twitter:image" content="https://tomaskimmel.com.ar/og-image.jpg" />
+    <meta name="twitter:image:alt" content="Escritorio de Tomas Kimmel en 3D: tres monitores con su presentación como Desarrollador Full Stack, su perfil en código y sus proyectos." />
 
-    <!-- Google Fonts: Big Shoulders Display, Schibsted Grotesk, JetBrains Mono -->
+    <!-- Fuentes: Big Shoulders Display, Schibsted Grotesk, JetBrains Mono -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@600;700;800&family=JetBrains+Mono:wght@400;500;600&family=Schibsted+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
 
-    <!-- Schema.org Structured Data (JSON-LD) for SEO -->
+    <!-- Datos estructurados (Schema.org) -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
-      "@type": "Person",
-      "name": "Tomas Kimmel",
-      "jobTitle": "Desarrollador Full Stack",
-      "url": "https://github.com/tommikimmel/portafolio",
-      "sameAs": [
-        "https://github.com/tommikimmel",
-        "https://linkedin.com/in/tomas-kimmel"
-      ],
-      "knowsAbout": [
-        "Spring Boot",
-        "React",
-        "PostgreSQL",
-        "Docker",
-        "Java",
-        "JavaScript",
-        "TypeScript",
-        "WebSockets",
-        "SaaS Development"
-      ],
-      "alumniOf": {
-        "@type": "EducationalOrganization",
-        "name": "Universidad Tecnológica Nacional (UTN)"
-      },
-      "address": {
-        "@type": "PostalAddress",
-        "addressLocality": "Córdoba",
-        "addressCountry": "AR"
-      }
+      "@graph": [
+        {
+          "@type": "WebSite",
+          "@id": "https://tomaskimmel.com.ar/#website",
+          "url": "https://tomaskimmel.com.ar/",
+          "name": "Tomas Kimmel",
+          "inLanguage": "es-AR",
+          "publisher": { "@id": "https://tomaskimmel.com.ar/#person" }
+        },
+        {
+          "@type": "ProfilePage",
+          "@id": "https://tomaskimmel.com.ar/#profile",
+          "url": "https://tomaskimmel.com.ar/",
+          "name": "Tomas Kimmel | Desarrollador Full Stack",
+          "inLanguage": "es-AR",
+          "isPartOf": { "@id": "https://tomaskimmel.com.ar/#website" },
+          "mainEntity": { "@id": "https://tomaskimmel.com.ar/#person" },
+          "primaryImageOfPage": "https://tomaskimmel.com.ar/og-image.jpg"
+        },
+        {
+          "@type": "Person",
+          "@id": "https://tomaskimmel.com.ar/#person",
+          "name": "Tomas Kimmel",
+          "jobTitle": "Desarrollador Full Stack",
+          "url": "https://tomaskimmel.com.ar/",
+          "email": "mailto:tomikimmeldev@gmail.com",
+          "sameAs": [
+            "https://github.com/tommikimmel",
+            "https://www.linkedin.com/in/tomas-kimmel"
+          ],
+          "worksFor": {
+            "@type": "Organization",
+            "name": "Tranqui App Neurociencias",
+            "url": "https://tranquisalud.com"
+          },
+          "alumniOf": {
+            "@type": "CollegeOrUniversity",
+            "name": "Universidad Tecnológica Nacional, Facultad Regional Córdoba"
+          },
+          "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Córdoba",
+            "addressCountry": "AR"
+          },
+          "knowsAbout": [
+            "Java",
+            "Spring Boot",
+            "Angular",
+            "TypeScript",
+            "PostgreSQL",
+            "Docker",
+            "Kafka",
+            "Microservicios",
+            "Arquitectura orientada a eventos (EDA)",
+            "API Gateway",
+            "TailwindCSS"
+          ]
+        }
+      ]
     }
     </script>
   </head>
   <body>
-    <div id="root"></div>
+    <!-- Contenido estático para buscadores y vistas sin JavaScript; React lo reemplaza al montar -->
+    <div id="root">
+      <main class="seo-fallback" style="max-width: 720px; margin: 0 auto; padding: 48px 20px; font-family: system-ui, sans-serif; color: #efe5d6; background: #141210;">
+        <h1>Tomas Kimmel — Desarrollador Full Stack</h1>
+        <p>Desarrollador Full Stack en Córdoba, Argentina. Estudiante de la Tecnicatura Universitaria en Programación (UTN FRC). Construyo SaaS en producción y microservicios con Java, Spring Boot, Angular, PostgreSQL, Docker y Kafka.</p>
+        <h2>Proyectos</h2>
+        <ul>
+          <li><a href="https://tranquisalud.com">Tranqui App</a>: SaaS para consultorios de salud mental, con turnos en tiempo real, videollamadas y cobros online.</li>
+          <li><a href="https://aulaquest.marketplace-utn.tech/">AulaQuest</a>: plataforma de aprendizaje gamificado basada en microservicios; desarrollé el Market.</li>
+        </ul>
+        <h2>Contacto</h2>
+        <p><a href="mailto:tomikimmeldev@gmail.com">tomikimmeldev@gmail.com</a> · <a href="https://www.linkedin.com/in/tomas-kimmel">LinkedIn</a> · <a href="https://github.com/tommikimmel">GitHub</a></p>
+      </main>
+    </div>
     <script type="module" src="/src/main.jsx"></script>
   </body>
 </html>

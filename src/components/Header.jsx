@@ -86,6 +86,7 @@ export function Header() {
     <header className={`header ${scrolled ? 'header-scrolled' : ''}`}>
       <nav className="nav wrap" aria-label="Navegación principal">
         <a href="#top" onClick={(e) => handleNavClick(e, '#top')} className="logo font-display">
+          <img src="/favicon.svg" alt="" width="30" height="30" className="logo-mark" />
           Tomas Kimmel
         </a>
 

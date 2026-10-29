@@ -23,7 +23,7 @@ export function ProjectShot({ src, alt, hint }) {
   return (
     <div className="shot">
       {src ? (
-        <img src={src} alt={alt} loading="lazy" />
+        <img src={src} alt={alt} loading="lazy" decoding="async" />
       ) : (
         <div className="shot-pending">
           <ImageOff size={22} aria-hidden="true" />
@@ -35,10 +35,10 @@ export function ProjectShot({ src, alt, hint }) {
   );
 }
 
-export function ProjectCard({ id, name, category, summary, image, repo, live, stack, points }) {
+export function ProjectCard({ id, name, category, summary, image, imageAlt, repo, live, stack, points }) {
   return (
     <article className="proj reveal" aria-labelledby={`${id}-title`}>
-      <ProjectShot src={image} alt={`Captura de ${name}`} hint={`public/projects/${id}.webp`} />
+      <ProjectShot src={image} alt={imageAlt || `Captura de ${name}`} hint={`public/projects/${id}.webp`} />
 
       <div className="proj-info">
         <h3 id={`${id}-title`} className="proj-name">{name}</h3>

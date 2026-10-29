@@ -11,6 +11,7 @@ const projects = [
     summary:
       'Plataforma para consultorios de salud mental: el paciente reserva turno en los bloques que define el profesional, tiene la consulta por videollamada y paga online, todo desde un mismo lugar.',
     image: '/projects/tranqui-app.webp',
+    imageAlt: 'Página de inicio de Tranqui App: buscador de psicólogos y psiquiatras en Córdoba con filtros por especialidad, como ansiedad, depresión o insomnio.',
     repo: 'https://github.com/tommikimmel/tranquiApp',
     live: 'https://tranquisalud.com',
     stack: ['Spring Boot', 'ReactJS', 'PostgreSQL', 'Docker', 'WebSockets', 'Google Meet API', 'Mercado Pago API'],
@@ -27,6 +28,7 @@ const projects = [
     summary:
       'Plataforma de aprendizaje gamificado construida entre varios equipos de la TUP como un sistema de microservicios. Mi parte principal es el Market: la tienda del curso donde los alumnos usan sus monedas en ofertas, subastas y metas colectivas.',
     image: '/projects/aulaquest.webp',
+    imageAlt: 'Tienda del Market de AulaQuest: filtros por tipo de objeto, buscador y una oferta de escudo que se compra con 10 monedas del curso.',
     repo: 'https://github.com/tommikimmel/tpi-market', // respaldo privado del repo de la organización
     live: 'https://aulaquest.marketplace-utn.tech/',
     stack: ['Java', 'Spring Boot', 'PostgreSQL', 'Flyway', 'Kafka', 'Docker', 'Angular 22'],
